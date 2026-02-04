@@ -5,8 +5,8 @@ setup = function() {
     size(600, 400);
     background(255,255,255,0);
     
-    drawFish(200, 200, color(200,0,200)); 
-    drawFish(300, 200, color(0,200,200));
+    
+
 };
 
 //🟢draw Function - will run on repeat
@@ -17,13 +17,14 @@ background(255, 255, 255, 0)
   // mario follows the mouse function
   image(fireMario, mouseX, mouseY, 36, 60)
 
-  drawMole(470, 320)
-
+  drawMushroom(350, 235, color(200,0,200)); 
+    
+    drawMole(470, 320)
 };
 
 //🟢mouseClicked Function - will run when mouse is clicked
 mouseClicked = function(){
-
+drawFireball(450, 320)
 }
 
 //🟢drawMole Function - custom function created for this lesson
@@ -41,11 +42,18 @@ var drawMole = function(moleX, moleY){
     ellipse(moleX, moleY+10, 20, 5); // mouth
 }
 
-//🟡drawFish Function - will run when called
-var drawFish = function(fishX, fishY, fishColor){
-  textSize(80);
-  fill(fishColor);
-  text("𓆝", fishX, fishY);
+//🟡drawMushroom Function - will run when called
+var drawMushroom = function(mushroomX, mushroomY, mushroomColor){
+  textSize(30);
+  fill(mushroomColor);
+  text("🍄", mushroomX, mushroomY);
+};
+
+//drawFireball Function
+var drawFireball = function(fireballX, fireballY, fireballColor){
+textSize(50);
+fill(fireballColor);
+text("🔥", fireballX, fireballY);
 };
 
 
