@@ -8,7 +8,8 @@ setup = function() {
     
 
 };
-
+var showFireball = 0
+var mole = 0
 //🟢draw Function - will run on repeat
 draw = function(){
 
@@ -19,15 +20,27 @@ background(255, 255, 255, 0)
 
   drawMushroom(350, 235, color(200,0,200)); 
     
-    drawMole(470, 320)
+    drawMole(470, 320);
+
+  
+    //mole is burning
+    if (mole == 1){drawMole(random(465, 475), random(320, 320))};
+    
+    //fireball on mole
+    if (showFireball == 1){drawFireball(random(410, 500), random(290, 350))};
+
+
 };
+
 
 //🟢mouseClicked Function - will run when mouse is clicked
 mouseClicked = function(){
-drawFireball(450, 320)
+showFireball = 1;
+mole = 1;
+
 }
 
-//🟢drawMole Function - custom function created for this lesson
+//🟢drawMole Function
 var drawMole = function(moleX, moleY){
 
     noStroke();
